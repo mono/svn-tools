@@ -1,3 +1,8 @@
+2004-11-19  Raja R Harinath  <rharinath@novell.com>
+
+	* svnci (MSG): Prefix each ChangeLog segment with the directory it
+	comes from.
+
 2004-11-13  Ben Maurer  <bmaurer@ximian.com>
 
 	* mono-merge-oneoh: Hopefully I can stop dicking with the repo

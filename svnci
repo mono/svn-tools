@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 FILES=$@
 
@@ -6,7 +6,13 @@ echo "Creating commit message..."
 
 MSG=`mktemp`
 
-svn di $FILES | filterdiff -i*ChangeLog | grep '^[+]' | grep -v '^[+][+]' | sed s/^[+]// > $MSG
+svn di $FILES | filterdiff -i'*ChangeLog' | 
+  sed -e '/^[^+]/d' -e 's,^[+],,' -e '/^[^+]/b' -e 's,^[+][+],In,' -e 's,/ChangeLog.*$,:,' -e 's,ChangeLog.*$,.:,' >> $MSG
+
+case `grep '^In' $MSG | wc -l` in
+1) (echo 1d; echo w; echo q) | ed - $MSG ;;
+*) ;;
+esac
 
 cat $MSG
 
