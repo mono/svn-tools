@@ -1,3 +1,8 @@
+2004-11-13  Ben Maurer  <bmaurer@ximian.com>
+
+	* mono-merge-oneoh: Hopefully I can stop dicking with the repo
+	url :-).
+
 2004-11-12  Ben Maurer  <bmaurer@ximian.com>
 
 	* mono-merge-oneoh: Fix the paths here for the new repo
