@@ -1,3 +1,7 @@
+2004-11-12  Ben Maurer  <bmaurer@ximian.com>
+
+	* mono-merge-oneoh: Fix the paths here for the new repo
+
 2004-11-11  Ben Maurer  <bmaurer@ximian.com>
 
 	* mono-merge-oneoh: This script will merge changes into 1.0

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$MONO_SVN_ROOT" == "" ]; then MONO_SVN_ROOT="svn+ssh://mono-cvs.ximian.com/repo/"; fi
+if [ "$MONO_SVN_ROOT" == "" ]; then MONO_SVN_ROOT="svn+ssh://mono-cvs.ximian.com/src/"; fi
 if [ "$MONO_HEAD_PATH" == "" ]; then MONO_HEAD_PATH="$HOME/msvn"; fi
 if [ "$MONO_ONEOH_PATH" == "" ]; then MONO_ONEOH_PATH="$HOME/msvn/oneoh"; fi
 
