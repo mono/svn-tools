@@ -1,0 +1,5 @@
+2004-11-11  Ben Maurer  <bmaurer@ximian.com>
+
+	* svnci: This is a script that does a commit with the right log
+	message. Thanks to Todd for his input on this script.
+
