@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ "$MONO_SVN_ROOT" == "" ]; then MONO_SVN_ROOT="svn+ssh://mono-cvs.ximian.com/repo/"; fi
+if [ "$MONO_HEAD_PATH" == "" ]; then MONO_HEAD_PATH="$HOME/msvn"; fi
+if [ "$MONO_ONEOH_PATH" == "" ]; then MONO_ONEOH_PATH="$HOME/msvn/oneoh"; fi
+
+REV1=$1
+REV2=$2
+
+if [[ "$REV1x" = "x" ]]
+then
+	echo "You need to pass the revision"
+	exit 1
+fi
+
+if [[ $REV2 ]]
+then
+	REV_BEFORE=$REV1
+	REV_AFTER=$REV2
+else
+	REV_AFTER=$REV1
+	REV_BEFORE=$(( REV_AFTER - 1 ))
+fi
+
+pushd $MONO_ONEOH_PATH > /dev/null
+for DIR in mono mcs
+do
+	pushd $DIR > /dev/null
+	svn merge -r $REV_BEFORE:$REV_AFTER $MONO_SVN_ROOT/trunk/$DIR
+	popd > /dev/null
+done
+popd > /dev/null
