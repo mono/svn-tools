@@ -1,3 +1,7 @@
+2005-06-01  Raja R Harinath  <rharinath@novell.com>
+
+	* svnci: Fix typo.
+
 2004-11-19  Raja R Harinath  <rharinath@novell.com>
 
 	* svnci (MSG): Prefix each ChangeLog segment with the directory it

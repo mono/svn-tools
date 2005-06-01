@@ -9,7 +9,7 @@ MSG=`mktemp`
 svn di $FILES | filterdiff -i'*ChangeLog' | 
   sed -e '/^[^+]/d' -e 's,^[+],,' -e '/^[^+]/b' -e 's,^[+][+],In,' -e 's,/ChangeLog.*$,:,' -e 's,ChangeLog.*$,.:,' >> $MSG
 
-case `grep '^In' $MSG | wc -l` in
+case $(grep '^In' $MSG | wc -l) in
 1) (echo 1d; echo w; echo q) | ed - $MSG ;;
 *) ;;
 esac
@@ -31,7 +31,7 @@ do
 	case $RESPONSE in
 		"Y" | "y" | "yes" | "Yes")
 		
-			echo "Comitting..."
+			echo "Committing..."
 			svn ci -F $MSG $FILES
 			rm $MSG
 			exit 0
