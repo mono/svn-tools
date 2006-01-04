@@ -1,3 +1,7 @@
+2006-01-04  Raja R Harinath  <rharinath@novell.com>
+
+	* svkci: New.  Copied from 'svnci', with 's,svn,svk,'.
+
 2005-06-01  Raja R Harinath  <rharinath@novell.com>
 
 	* svnci: Fix typo.
